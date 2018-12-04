@@ -100,10 +100,10 @@
 
         <Button
             android:id="@+id/loved_button"
-            android:layout_width="43dp"
-            android:layout_height="match_parent"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="10dp"
-            android:background="@drawable/Rating" />
+            android:background="@drawable/rating" />
 
 
     </LinearLayout>

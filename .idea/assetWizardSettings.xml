@@ -33,7 +33,7 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="Rating" />
+                                      <entry key="outputName" value="rating" />
                                     </map>
                                   </option>
                                 </PersistentState>
