@@ -88,20 +88,22 @@
 
     <LinearLayout
         android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/post_main_lay"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="318dp"
+        android:layout_marginTop="11dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="80dp">
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/loved_button"
-            android:layout_width="50dp"
-            android:layout_height="70dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginStart="10dp"
-            android:background="@drawable/liked" />
+            android:background="@drawable/rating" />
 
 
     </LinearLayout>
@@ -116,11 +118,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="74dp"
-            android:layout_weight="1" />
     </LinearLayout>
 
 
