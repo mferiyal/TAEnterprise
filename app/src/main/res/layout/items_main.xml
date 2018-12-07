@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/name"
+                        android:id="@+id/txtJudul"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginRight="4dp"
@@ -53,13 +53,6 @@
                         android:textStyle="bold"
                         android:textColor="#000"/>
 
-                    <TextView
-                        android:id="@+id/username"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="4dp"
-                        android:textSize="14sp"
-                        android:text="*Mferiyal"/>
 
                     <TextView
                         android:id="@+id/tanggalpost"
@@ -74,7 +67,7 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/status"
+                android:id="@+id/teks"
                 android:layout_margin="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -92,18 +85,24 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/post_main_lay"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="318dp"
+        android:layout_marginStart="275dp"
         android:layout_marginTop="11dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/loved_button"
+            android:id="@+id/btnlike"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginStart="10dp"
             android:background="@drawable/rating" />
+        <TextView
+            android:id="@+id/txtjumlahlike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="100"
+            />
 
 
     </LinearLayout>
