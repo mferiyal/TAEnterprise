@@ -10,28 +10,29 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.mfir.pc.taenterprise.Model.ModelArtikel;
 import com.mfir.pc.taenterprise.R;
 
 
 import java.util.List;
 
-public class AdapterHome  extends RecyclerView.Adapter<AdapterHome.MyViewHolder> {
+public class AdapterArtikel  extends RecyclerView.Adapter<AdapterArtikel.MyViewHolder> {
 
 
-    private List<ModelHome> mHome ;
+    private List<ModelArtikel> mHome ;
     private Context mcon;
 
     @NonNull
     @Override
-    public AdapterHome.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public AdapterArtikel.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View mView = LayoutInflater.from(parent.getContext()).inflate(R.layout.items_main, parent, false);
         MyViewHolder mViewHolder = new MyViewHolder(mView);
         return mViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull AdapterHome.MyViewHolder holder, int position) {
-        ModelHome modelHome = mHome.get(position);
+    public void onBindViewHolder(@NonNull AdapterArtikel.MyViewHolder holder, int position) {
+        ModelArtikel modelHome = mHome.get(position);
 
         holder.Judul.setText(modelHome.getJudul());
         holder.Tanggal.setText(modelHome.getJudul());
