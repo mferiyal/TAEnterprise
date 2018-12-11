@@ -6,10 +6,14 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.mfir.pc.taenterprise.Adapter.AdapterArtikel;
 import com.mfir.pc.taenterprise.Model.ModelArtikel;
 import com.mfir.pc.taenterprise.Model.ResultArtikel;
+import com.mfir.pc.taenterprise.Model.ResultDaftar;
 import com.mfir.pc.taenterprise.Rest.ApiClient;
 import com.mfir.pc.taenterprise.Rest.ApiInterface;
 
@@ -26,12 +30,40 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView.Adapter mAdapter;
     Context mContext;
     ApiInterface mApiInterface;
+    Button like;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initRecyclerArtikel();
+        like = findViewById(R.id.btnlike);
+
+        like.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ApiInterface mApiInterface = ApiClient.getClient().create(ApiInterface.class);
+                retrofit2.Call<ResultArtikel> mArtikel = mApiInterface.suka(like);
+                mArtikel.enqueue(new Callback<ResultArtikel>() {
+
+                    @Override
+                    public void onResponse(Call<ResultArtikel> call, Response<ResultArtikel> response) {
+                        String resultartikel = response.body().getStatus();
+                        String message = response.body().getMessage();
+                        if (resultartikel.equals("Berhasil")) {
+                            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<ResultArtikel> call, Throwable t) {
+                        Toast.makeText(MainActivity.this, "Jaringan Error!", Toast.LENGTH_SHORT).show();
+                    }
+                });
+                }
+        });
     }
 
     private void initRecyclerArtikel(){
@@ -45,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ResultArtikel> call, Response<ResultArtikel> response) {
                 Log.d("Get Artikel", response.body().getStatus());
-                List<ModelArtikel> listArtikelView = response.body().getResult();
-                mAdapter = new AdapterArtikel(listArtikelView);
+                List<ModelArtikel> mHome = response.body().getResult();
+                mAdapter = new AdapterArtikel(mHome);
                 mArtikelview.setAdapter(mAdapter);
             }
 
@@ -57,4 +89,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     }
-}

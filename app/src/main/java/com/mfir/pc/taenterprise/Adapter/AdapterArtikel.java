@@ -22,6 +22,10 @@ public class AdapterArtikel  extends RecyclerView.Adapter<AdapterArtikel.MyViewH
     private List<ModelArtikel> mHome ;
     private Context mcon;
 
+    public AdapterArtikel(List<ModelArtikel> mHome) {
+    }
+
+
     @NonNull
     @Override
     public AdapterArtikel.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
