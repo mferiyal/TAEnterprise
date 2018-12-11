@@ -7,7 +7,9 @@ import android.telecom.Call;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.mfir.pc.taenterprise.Model.ResultUser;
 import com.mfir.pc.taenterprise.Rest.ApiClient;
 import com.mfir.pc.taenterprise.Rest.ApiInterface;
 
@@ -36,31 +38,42 @@ public class Login extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Call<User> getLogin = mApiInterface.getLogin(edtLoginEmail.getText().toString(), edtLoginPassword.getText().toString());
-                getLogin.enqueue(new Callback<User>(){
+
+                ApiInterface mApiInterface = ApiClient.getClient().create(ApiInterface.class);
+
+//                RequestBody reqUsername = MultipartBody.create(MediaType.parse("multipart/form-data"),
+//                        txt_username.getText().toString());
+//                RequestBody resPassword = MultipartBody.create(MediaType.parse("multipart/form-data"),
+//                        txt_password.getText().toString());
+                retrofit2.Call<ResultUser> mLogin =  mApiInterface.loginRequest(edtLoginEmail.getText().toString());
+                mLogin.enqueue(new Callback<ResultUser>() {
                     @Override
-                    public void onResponse(retrofit2.Call<User> call, Response<User> response) {
-                        String status = response.body().getEmail();
-                        if (status.equals("okee")){
-                            User user = response.body().getPassword();
-//                            create sesion
-                            sessionManagement.createLoginSession(User.getEmail(), User.getPass());
-                            Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                    public void onResponse(retrofit2.Call<ResultUser> call, Response<ResultUser> response) {
+                        String status = response.body().getStatus();
+                        if (status.equals("success"))
+                        {
+                            User user = response.body().getUser();
+                            Intent i = new Intent(Login.this, MainActivity.class);
+                            i.putExtra("username", user.getUsername());
+                            i.putExtra("nama_user", user.getNama_user());
+
                             startActivity(i);
-                            finish();
 
                         }
+//                        Log.d("Status", response.body().getStatus());
+//                        List<UserModel> mUser = response.body().getData();
+
+                    }
 
                     @Override
-                    public void onFailure(retrofit2.Call<ModelUser> call, Throwable t) {
+                    public void onFailure(retrofit2.Call<ResultUser> call, Throwable t) {
+//                        Log.d("Status", t.getMessage());
+                        Toast.makeText(getApplicationContext(),"fail login", Toast.LENGTH_SHORT).show();
 
                     }
-
-                    }
-                }
+                });
             }
         });
-
 
         buttondaftar.setOnClickListener(new View.OnClickListener() {
             @Override
