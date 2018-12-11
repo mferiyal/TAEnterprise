@@ -2,29 +2,26 @@ package com.mfir.pc.taenterprise.Model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class ModelHome {
+public class ModelArtikel {
 
     @SerializedName("no")
-    private String no;
+    String no;
     @SerializedName("judul")
-    private String judul;
+    String judul;
     @SerializedName("tanggal")
-    private String tanggal;
-    @SerializedName("teks")
-    private String teks;
+    String tanggal;
+    @SerializedName("text")
+    String text;
     @SerializedName("foto")
-    private String foto;
+    String foto;
     @SerializedName("like")
-    private String like;
+    String like;
 
-
-
-    public ModelHome() { }
-    public ModelHome(String no, String judul, String tanggal, String teks, String foto,  String like) {
+    public ModelArtikel(String no, String judul, String tanggal, String text, String foto, String like) {
         this.no = no;
         this.judul = judul;
         this.tanggal = tanggal;
-        this.teks = teks;
+        this.text = text;
         this.foto = foto;
         this.like = like;
     }
@@ -53,12 +50,12 @@ public class ModelHome {
         this.tanggal = tanggal;
     }
 
-    public String getTeks() {
-        return teks;
+    public String getText() {
+        return text;
     }
 
-    public void setTeks(String teks) {
-        this.teks = teks;
+    public void setText(String text) {
+        this.text = text;
     }
 
     public String getFoto() {

@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.mfir.pc.taenterprise.R;
-import com.mfir.pc.taenterprise.Model.ModelHome;
 
 
 import java.util.List;
