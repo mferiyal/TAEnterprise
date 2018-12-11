@@ -4,14 +4,11 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.telecom.Call;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
-import com.mfir.pc.taenterprise.Model.ModelUser;
 import com.mfir.pc.taenterprise.Model.ResultUser;
 import com.mfir.pc.taenterprise.Rest.ApiClient;
 import com.mfir.pc.taenterprise.Rest.ApiInterface;
@@ -42,17 +39,12 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-
                 ApiInterface mApiInterface = ApiClient.getClient().create(ApiInterface.class);
 
 //                RequestBody reqUsername = MultipartBody.create(MediaType.parse("multipart/form-data"),
 //                        txt_username.getText().toString());
 //                RequestBody resPassword = MultipartBody.create(MediaType.parse("multipart/form-data"),
 //                        txt_password.getText().toString());
-
-
-                ApiInterface mApiInterface = ApiClient.getClient().create(ApiInterface.class);
-
                 retrofit2.Call<ResultUser> mLogin =  mApiInterface.loginRequest(edtLoginEmail.getText().toString());
                 mLogin.enqueue(new Callback<ResultUser>() {
                     @Override
@@ -60,44 +52,28 @@ public class Login extends AppCompatActivity {
                         String status = response.body().getStatus();
                         if (status.equals("success"))
                         {
-
                             User user = response.body().getUser();
                             Intent i = new Intent(Login.this, MainActivity.class);
                             i.putExtra("username", user.getUsername());
                             i.putExtra("nama_user", user.getNama_user());
 
-                            ModelUser user = response.body().getUser();
-                            Intent i = new Intent(Login.this, MainActivity.class);
-                            i.putExtra("Nama", user.getNama());
-                            i.putExtra("Email", user.getEmail());
-
-
                             startActivity(i);
 
                         }
-
 //                        Log.d("Status", response.body().getStatus());
 //                        List<UserModel> mUser = response.body().getData();
-
-
-
 
                     }
 
                     @Override
                     public void onFailure(retrofit2.Call<ResultUser> call, Throwable t) {
-
 //                        Log.d("Status", t.getMessage());
-
-                        Log.d("Status", t.getMessage());
-
                         Toast.makeText(getApplicationContext(),"fail login", Toast.LENGTH_SHORT).show();
 
                     }
                 });
             }
         });
-
 
         buttondaftar.setOnClickListener(new View.OnClickListener() {
             @Override

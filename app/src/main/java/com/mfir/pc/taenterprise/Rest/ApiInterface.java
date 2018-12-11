@@ -19,8 +19,8 @@ public interface ApiInterface {
     @POST("ruangan/login")
     Call<ResultUser> loginRequest(@Field("username")String username);
 
-    @GET("ruangan/artikel")
-    Call<ResultArtikel> getArtikel();
+    @GET("ruangan/ruangan")
+    Call<ResultArtikel> getRuangan();
 
     @Multipart
     @POST("ruangan/login")
