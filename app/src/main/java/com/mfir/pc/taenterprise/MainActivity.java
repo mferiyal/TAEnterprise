@@ -65,27 +65,26 @@ public class MainActivity extends AppCompatActivity {
                 }
         });
     }
+        private void initRecyclerArtikel () {
+            mContext = getApplicationContext();
+            mArtikelview = (RecyclerView) findViewById(R.id.recyler_home);
+            mlayoutm = new LinearLayoutManager(mContext);
+            mArtikelview.setLayoutManager(mlayoutm);
+            mApiInterface = ApiClient.getClient().create(ApiInterface.class);
+            Call<ResultArtikel> mArtikelView = mApiInterface.getArtikel();
+            mArtikelView.enqueue(new Callback<ResultArtikel>() {
+                @Override
+                public void onResponse(Call<ResultArtikel> call, Response<ResultArtikel> response) {
+                    Log.d("Get Artikel", response.body().getStatus());
+                    List<ModelArtikel> mHome = response.body().getResult();
+                    mAdapter = new AdapterArtikel(mHome);
+                    mArtikelview.setAdapter(mAdapter);
+                }
 
-    private void initRecyclerArtikel(){
-        mContext = getApplicationContext();
-        mArtikelview = (RecyclerView) findViewById(R.id.recyler_home);
-        mlayoutm = new LinearLayoutManager(mContext);
-        mArtikelview.setLayoutManager(mlayoutm);
-        mApiInterface = ApiClient.getClient().create(ApiInterface.class);
-        Call<ResultArtikel> mArtikelView = mApiInterface.getArtikel();
-        mArtikelView.enqueue(new Callback<ResultArtikel>() {
-            @Override
-            public void onResponse(Call<ResultArtikel> call, Response<ResultArtikel> response) {
-                Log.d("Get Artikel", response.body().getStatus());
-                List<ModelArtikel> mHome = response.body().getResult();
-                mAdapter = new AdapterArtikel(mHome);
-                mArtikelview.setAdapter(mAdapter);
-            }
-
-            @Override
-            public void onFailure(Call<ResultArtikel> call, Throwable t) {
-                Log.d("Get Artikel",t.getMessage());
-            }
-        });
-    }
+                @Override
+                public void onFailure(Call<ResultArtikel> call, Throwable t) {
+                    Log.d("Get Artikel", t.getMessage());
+                }
+            });
+        }
     }
