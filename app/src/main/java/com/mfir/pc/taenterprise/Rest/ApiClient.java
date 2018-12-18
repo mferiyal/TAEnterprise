@@ -3,8 +3,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
-    public static final String BASE_URL = "http://192.168.88.27/artikel/index.php/";
-    public static final String Base_Upload = "http://192.168.88.27/artikel/upload/";
+    public static final String BASE_URL = "http://192.168.181.162/artikel/index.php/";
+    public static final String Base_Upload = "http://192.168.181.162/artikel/upload/";
     private static Retrofit retrofit = null;
     public static Retrofit getClient() {
         if (retrofit==null) {

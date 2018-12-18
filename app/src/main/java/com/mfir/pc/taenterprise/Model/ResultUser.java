@@ -9,17 +9,16 @@ public class ResultUser {
     @SerializedName("status")
     private String status;
     @SerializedName("result")
-    private List<ModelUser> result = new ArrayList<>();
+    private ModelUser user;
     @SerializedName("message")
     private String message;
-    @SerializedName("result_user")
-    private ModelUser user;
 
 
     public ResultUser(String status , ModelUser user) {
         this.status = status;
         this.user = user;
     }
+
     public String getStatus() {
         return status;
     }
@@ -28,8 +27,12 @@ public class ResultUser {
         this.status = status;
     }
 
-    public List<ModelUser> getResult() {
-        return result;
+    public ModelUser getUser() {
+        return user;
+    }
+
+    public void setUser(ModelUser user) {
+        this.user = user;
     }
 
     public String getMessage() {
@@ -38,14 +41,5 @@ public class ResultUser {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-
-    public ModelUser getUser() {
-        return user;
-    }
-
-    public void setUser(ModelUser user) {
-        this.user = user;
     }
 }

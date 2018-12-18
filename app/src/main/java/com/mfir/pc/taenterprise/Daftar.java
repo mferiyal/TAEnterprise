@@ -8,16 +8,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.mfir.pc.taenterprise.Model.ResultDaftar;
-import com.mfir.pc.taenterprise.Model.ResultUser;
+import com.mfir.pc.taenterprise.Model.ModelArtikel;
+import com.mfir.pc.taenterprise.Model.ModelUser;
 import com.mfir.pc.taenterprise.Rest.ApiClient;
 import com.mfir.pc.taenterprise.Rest.ApiInterface;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class Daftar extends AppCompatActivity {
 
@@ -49,23 +47,23 @@ public class Daftar extends AppCompatActivity {
                         .build();
 */
                 ApiInterface mApiInterface = ApiClient.getClient().create(ApiInterface.class);
-                retrofit2.Call<ResultDaftar> mLogin = mApiInterface.daftar(nama, email, password);
-                mLogin.enqueue(new Callback<ResultDaftar>() {
+                Call<ModelUser> mLogin = mApiInterface.daftar(nama, email, password);
+                mLogin.enqueue(new Callback<ModelUser>() {
 
 
                     @Override
-                    public void onResponse(Call<ResultDaftar> call, Response<ResultDaftar> response) {
-                        String resultdaftar = response.body().getStatus();
-                        String message = response.body().getMessage();
-                        if (resultdaftar.equals("Berhasil")) {
-                            Toast.makeText(Daftar.this, message, Toast.LENGTH_SHORT).show();
+                    public void onResponse(Call<ModelUser> mLogin, Response<ModelUser> response) {
+                        if (Edtnama.getText().toString() != null && EdtEmail.getText().toString() != null && EdtPassword.getText().toString() != null) {
+                            Toast.makeText(Daftar.this, "Success", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(getApplicationContext(), Login.class);
+                            startActivity(i);
                         } else {
-                            Toast.makeText(Daftar.this, message, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Daftar.this, "failed", Toast.LENGTH_SHORT).show();
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<ResultDaftar> call, Throwable t) {
+                    public void onFailure(Call<ModelUser> call, Throwable t) {
                         Toast.makeText(Daftar.this, "Jaringan Error!", Toast.LENGTH_SHORT).show();
                     }
                 });

@@ -7,23 +7,14 @@
     android:orientation="vertical"
     tools:context=".Detail">
 
-    <ImageView
-        android:id="@+id/imageProfilee"
-        android:layout_width="70dp"
-        android:layout_height="56dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/imageView4"
-        android:adjustViewBounds="false"
-        android:cropToPadding="false"
-        app:srcCompat="@drawable/ic_launcher_background" />
-
     <TextView
         android:id="@+id/textViewJudul"
         android:layout_width="326dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="195dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="158dp"
         android:text="Judul"
         android:textSize="18sp" />
 
@@ -32,9 +23,10 @@
         android:id="@+id/textViewTextdetail"
         android:layout_width="305dp"
         android:layout_height="33dp"
+        android:layout_alignStart="@+id/txtLiked"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="139dp"
+        android:layout_marginStart="-2dp"
+        android:layout_marginBottom="302dp"
         android:text="Deskripsi cara."
         android:textSize="16sp" />
 
@@ -53,8 +45,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="222dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="185dp"
         android:text="Tanggal" />
 
     <TextView
@@ -63,8 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="247dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="206dp"
         android:text="Jumlah Like" />
 
 

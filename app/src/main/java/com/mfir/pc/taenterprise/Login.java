@@ -3,7 +3,6 @@ package com.mfir.pc.taenterprise;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.telecom.Call;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +14,7 @@ import com.mfir.pc.taenterprise.Model.ResultUser;
 import com.mfir.pc.taenterprise.Rest.ApiClient;
 import com.mfir.pc.taenterprise.Rest.ApiInterface;
 
+import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
@@ -43,10 +43,10 @@ public class Login extends AppCompatActivity {
 
 
                 ApiInterface mApiInterface = ApiClient.getClient().create(ApiInterface.class);
-                retrofit2.Call<ResultUser> mLogin =  mApiInterface.loginRequest(edtLoginEmail.getText().toString(),edtLoginPassword.getText().toString());
+                Call<ResultUser> mLogin =  mApiInterface.loginRequest(edtLoginEmail.getText().toString(),edtLoginPassword.getText().toString());
                 mLogin.enqueue(new Callback<ResultUser>() {
                     @Override
-                    public void onResponse(retrofit2.Call<ResultUser> call, Response<ResultUser> response) {
+                    public void onResponse(Call<ResultUser> call, Response<ResultUser> response) {
                         String status = response.body().getStatus();
                         if (status.equals("success"))
                         {

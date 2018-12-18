@@ -9,12 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.mfir.pc.taenterprise.Adapter.AdapterArtikel;
 import com.mfir.pc.taenterprise.Model.ModelArtikel;
 import com.mfir.pc.taenterprise.Model.ResultArtikel;
-import com.mfir.pc.taenterprise.Model.ResultDaftar;
 import com.mfir.pc.taenterprise.Rest.ApiClient;
 import com.mfir.pc.taenterprise.Rest.ApiInterface;
 import com.mfir.pc.taenterprise.listener.ClickListener;
@@ -95,7 +93,6 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onClick(View view, int position) {
                             ModelArtikel modelArtikel = mHome.get(position);
-                            Toast.makeText(mContext, "Judul Artikel : "+ modelArtikel.getJudul(), Toast.LENGTH_LONG).show();
                             Intent i = new Intent(mContext, Detail.class);
                             i.putExtra("judul",modelArtikel.getJudul());
                             i.putExtra("tanggal",modelArtikel.getTanggal());
