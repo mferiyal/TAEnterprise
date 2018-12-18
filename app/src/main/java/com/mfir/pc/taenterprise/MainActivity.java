@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.mfir.pc.taenterprise.Adapter.AdapterArtikel;
 import com.mfir.pc.taenterprise.Model.ModelArtikel;
@@ -39,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        like = findViewById(R.id.btnlike);
+//        like = findViewById(R.id.btnlike);
         mContext = getApplicationContext();
         mArtikelview = (RecyclerView) findViewById(R.id.recyler_home);
         mArtikelview.setHasFixedSize(true);
@@ -47,36 +48,12 @@ public class MainActivity extends AppCompatActivity {
         mArtikelview.setLayoutManager(mlayoutm);
         initRecyclerArtikel();
 
-
-
-
-/*
-        like.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ApiInterface mApiInterface = ApiClient.getClient().create(ApiInterface.class);
-                retrofit2.Call<ResultArtikel> mArtikel = mApiInterface.suka(like);
-                mArtikel.enqueue(new Callback<ResultArtikel>() {
-
-                    @Override
-                    public void onResponse(Call<ResultArtikel> call, Response<ResultArtikel> response) {
-                        String resultartikel = response.body().getStatus();
-                        String message = response.body().getMessage();
-                        if (resultartikel.equals("Berhasil")) {
-                            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
-                        } else {
-                            Toast.makeText(MainActivity.this, message, Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<ResultArtikel> call, Throwable t) {
-                        Toast.makeText(MainActivity.this, "Jaringan Error!", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                }
-        });
-*/
+//        like.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Toast.makeText(MainActivity.this,"like",Toast.LENGTH_SHORT).show();
+//            }
+//        });
     }
 
     private void initRecyclerArtikel () {

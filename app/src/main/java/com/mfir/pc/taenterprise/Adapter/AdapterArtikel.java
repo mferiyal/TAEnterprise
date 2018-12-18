@@ -44,7 +44,7 @@ public class AdapterArtikel  extends RecyclerView.Adapter<AdapterArtikel.MyViewH
         holder.Judul.setText(modelHome.getJudul());
         holder.Tanggal.setText(modelHome.getTanggal());
         holder.Teks.setText(modelHome.getText());
-        holder.Like.setText(modelHome.getLike());
+//        holder.Like.setText(modelHome.getLike());
 
         Glide.with(holder.itemView.getContext()).load(ApiClient.Base_Upload + mHome.get(position).getFoto()).into(holder.img);
 
@@ -74,7 +74,6 @@ public class AdapterArtikel  extends RecyclerView.Adapter<AdapterArtikel.MyViewH
             Judul = itemView.findViewById(R.id.txtJudul);
             Tanggal = itemView.findViewById(R.id.tanggalpost);
             Teks = itemView.findViewById(R.id.teks);
-            Like = itemView.findViewById(R.id.txtjumlahlike);
 
         }
     }

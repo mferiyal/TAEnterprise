@@ -81,28 +81,24 @@
 
     <LinearLayout
         android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="41dp"
+        android:layout_height="33dp"
         android:layout_below="@+id/post_main_lay"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="275dp"
-        android:layout_marginTop="11dp"
+        android:layout_marginStart="329dp"
+        android:layout_marginTop="6dp"
         android:layout_marginBottom="8dp"
         android:gravity="center"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/btnlike"
+        <Button
+            android:id="@+id/like"
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:layout_above="@+id/button"
+            android:layout_alignEnd="@+id/button"
             android:layout_marginStart="10dp"
-            android:background="@drawable/rating" />
-        <TextView
-            android:id="@+id/txtjumlahlike"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="100"
-            />
+            android:background="@drawable/dislike" />
 
 
     </LinearLayout>
