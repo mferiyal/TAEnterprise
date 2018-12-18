@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2018 at 04:08 PM
+-- Generation Time: Dec 18, 2018 at 04:49 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_artikel`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(5) DEFAULT NULL,
+  `nama` varchar(100) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `nama`, `email`, `password`) VALUES
+(1, 'admin', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -52,6 +72,27 @@ INSERT INTO `artikel` (`no`, `judul`, `tanggal`, `text`, `foto`, `like`) VALUES
 (8, 'Atau pakai cara ini. Tapi jangan protes kalau minumanmu malah ikutan bau :))', '15-12-2018', 'Hal yang perlu jadi pertimbangan pertama kali sebelum menerapkan lifehacks satu ini adalah: pastikan sepatumu nggak bau Guys! Ya meskipun kemungkinan terkontaminasinya kecil, tapi kan kalau bau sepatumu nempel di minumanmu bisa berabe juga ?', 'Minuman2.png', '8'),
 (9, ' Raket multifungsi. Bisa jadi penyaring masa ?', '16-12-2018', 'Ngakak sih ini. Tapi ada beberapa pertanyaan yang mungkin bisa jadi pertimbangan sebelum kau menerapkan lifehacks ini. Pertama, namanya raket kan biasa buat bulutangkis ya, kalau tiba-tiba dialihkan jadi penyaring, apa nggak takut makanan terkontaminasi bakteri? Ya meskipun sudah dicuci tapi tetap aja kan. Nah, kedua, senar raketnya apa nggak meleleh atau rusak gitu ya kalau kena air panas atau minyak?', 'reket.jpg', '10');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id_user` int(50) NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id_user`, `nama`, `email`, `password`) VALUES
+(0, '', '', ''),
+(1, 'feriyal', 'cferiyak@gmail.com', 'feriyal');
+
 --
 -- Indexes for dumped tables
 --
@@ -61,6 +102,12 @@ INSERT INTO `artikel` (`no`, `judul`, `tanggal`, `text`, `foto`, `like`) VALUES
 --
 ALTER TABLE `artikel`
   ADD PRIMARY KEY (`no`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT for dumped tables
