@@ -24,6 +24,11 @@
         public function index_post()
         {
             $data = array(
+                'no'          => $this->post('no'),
+                'judul'          => $this->post('judul'),
+                'tanggal'              => $this->post('tanggal'),
+                'text'     => $this->post('text'),
+                'foto'     => $this->post('foto'),
                 'like'     => $this->post('like'));
                 $insert = $this->db->insert('artikel', $data);
                 if ($insert) { $this->response(array('status' => 'sukses', 'result' => $data, 'message' => 'Berhasil'), 200);

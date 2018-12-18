@@ -15,14 +15,14 @@
         public function index_post()
         {
             $data = array(
-                'id_user'          => $this->post('id_user'),
+         //       'id_user'          => $this->post('id_user'),
                 'nama'          => $this->post('nama'),
                 'email'              => $this->post('email'),
                 'password'     => $this->post('password'),
                 );
                 $insert = $this->db->insert('user', $data);
                 if ($insert) {
-                    $this->response(array('status' => 'sukses', 'result' => $data, 'message' => 'Berhasil'), 200);
+                    $this->response(array('status' => 'Berhasil', 'result' => $data, 'message' => 'Berhasil'), 200);
                 } else {
                     $this->response(array('status' => 'fail', 502));
             }

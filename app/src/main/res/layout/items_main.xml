@@ -91,7 +91,7 @@
         android:gravity="center"
         android:orientation="horizontal">
 
-        <Button
+        <ImageButton
             android:id="@+id/btnlike"
             android:layout_width="30dp"
             android:layout_height="30dp"
