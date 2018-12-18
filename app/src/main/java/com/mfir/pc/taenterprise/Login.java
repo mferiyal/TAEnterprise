@@ -43,7 +43,7 @@ public class Login extends AppCompatActivity {
 
 
                 ApiInterface mApiInterface = ApiClient.getClient().create(ApiInterface.class);
-                retrofit2.Call<ResultUser> mLogin =  mApiInterface.loginRequest(edtLoginEmail.getText().toString());
+                retrofit2.Call<ResultUser> mLogin =  mApiInterface.loginRequest(edtLoginEmail.getText().toString(),edtLoginPassword.getText().toString());
                 mLogin.enqueue(new Callback<ResultUser>() {
                     @Override
                     public void onResponse(retrofit2.Call<ResultUser> call, Response<ResultUser> response) {

@@ -32,7 +32,7 @@ public class Daftar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_daftar);
-        btn_daftar = findViewById(R.id.ButtonDaftarDiLogin);
+        btn_daftar = findViewById(R.id.buttonLanjutDaftar);
         Edtnama = findViewById(R.id.editDaftarNama);
         EdtEmail = findViewById(R.id.editDaftarEmail);
         EdtPassword = findViewById(R.id.editDaftarPassword);

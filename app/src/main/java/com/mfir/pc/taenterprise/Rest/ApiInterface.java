@@ -18,29 +18,29 @@ import retrofit2.http.Part;
 public interface ApiInterface {
     @FormUrlEncoded
     @POST("artikel/Login")
-    Call<ResultUser> loginRequest(@Field("username")String username);
+    Call<ResultUser> loginRequest(@Field("username")String username,
+                                  @Field("password") String password);
 
-    @GET("artikel/Artikel")
+
+    @GET("artikel")
     Call<ResultArtikel> getArtikel();
 
-    @Multipart
-    @POST("artikel/Login")
-    Call<ResultUser> postLogin(@Part("username") RequestBody username,
-                               @Part("password")RequestBody password);
 
+    @FormUrlEncoded
     @POST("artikel/Register")
     Call<ResultDaftar> daftar(@Field("nama") String nama,
                               @Field("email") String email,
                               @Field("password") String password);
 
+    @Multipart
     @POST("artikel/Artikel")
-    Call<ResultArtikel> suka(@Field("like") Button like);
+    Call<ResultArtikel> artikel (@Field("judul") String judul,
+                                     @Field("tanggal") String tanggal,
+                                     @Field("text") String text,
+                                     @Field("foto") String foto,
+                                     @Field("like") Integer like);
 
 
+    Call<ResultArtikel> suka(Button like);
 
-//    @Multipart
-//    @POST("ruangan/login")
-//    Call<ResultUser> postLogin(@Part("username")RequestBody username,
-//                               @Part("password")RequestBody password);
 }
-
