@@ -34,11 +34,11 @@ public class Detail extends AppCompatActivity {
         String tanggal = i.getStringExtra("tanggal");
         String teks = i.getStringExtra("text");
         String foto = i.getStringExtra("foto");
-        String like = i.getStringExtra("like");
+//        String like = i.getStringExtra("like");
         juduldetail.setText(judul);
         tanggaldetail.setText(tanggal);
         teksdetail.setText(teks);
-        likedetail.setText(like);
+//        likedetail.setText(like);
 //        Glide.with(getApplicationContext()).load(ApiClient.Base_Upload + foto).into(fotodetail);
         Glide.with(getApplicationContext()).load(ApiClient.Base_Upload + foto).into(fotodetail2);
 
