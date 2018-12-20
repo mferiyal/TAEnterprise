@@ -42,11 +42,15 @@
         android:layout_height="35dp"
         android:orientation="horizontal">
 
-        <Button
+        <ToggleButton
             android:id="@+id/like"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:background="@drawable/dislike" />
+            android:background="@drawable/like_button"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            />
 
     </LinearLayout>
 </LinearLayout>
