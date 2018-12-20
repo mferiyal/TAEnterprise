@@ -25,7 +25,7 @@ public class Detail extends AppCompatActivity {
         juduldetail = findViewById(R.id.textViewJudul);
         namadetail = findViewById(R.id.txtJudul);
         tanggaldetail = findViewById(R.id.txtTanggal);
-        likedetail = findViewById(R.id.txtLiked);
+//        likedetail = findViewById(R.id.txtLiked);
         teksdetail = findViewById(R.id.textViewTextdetail);
 //        fotodetail = findViewById(R.id.imageProfilee);
         fotodetail2 = findViewById(R.id.imageView4);
