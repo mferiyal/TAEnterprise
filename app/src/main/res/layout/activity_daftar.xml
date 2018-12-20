@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#F7DF6D"
     tools:context=".Daftar">
 
     <RelativeLayout
@@ -55,7 +56,7 @@
             android:layout_width="359dp"
             android:layout_height="50dp"
             android:layout_margin="12dp"
-            android:background="@color/edittext"
+            android:background="@drawable/rounded_edit_text"
             android:hint="" />
 
         <TextView
@@ -72,7 +73,7 @@
             android:layout_width="359dp"
             android:layout_height="50dp"
             android:layout_margin="12dp"
-            android:background="@color/edittext"
+            android:background="@drawable/rounded_edit_text"
             />
 
         <TextView
@@ -88,7 +89,7 @@
             android:layout_width="362dp"
             android:layout_height="50dp"
             android:layout_margin="12dp"
-            android:background="@color/edittext"
+            android:background="@drawable/rounded_edit_text"
             android:inputType="textPassword" />
 
 
@@ -102,7 +103,7 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="end"
         android:layout_marginBottom="82dp"
-        android:background="@color/rounded_button"
+        android:background="@drawable/button_round"
         android:text="Daftar"
         android:textSize="20dp" />
 </RelativeLayout>

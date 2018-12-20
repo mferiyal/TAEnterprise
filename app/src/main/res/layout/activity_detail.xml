@@ -16,7 +16,8 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="#F7DF6D">
 
             <ImageView
                 android:id="@+id/imageView4"
@@ -51,8 +52,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/detail"
+                android:layout_marginStart="7dp"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="10dp"
                 android:layout_toEndOf="@+id/imageView4"
                 android:text="10 / 10 / 2018" />
         </RelativeLayout>
