@@ -48,12 +48,7 @@ public class MainActivity extends AppCompatActivity {
         mArtikelview.setLayoutManager(mlayoutm);
         initRecyclerArtikel();
 
-//        like.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(MainActivity.this,"like",Toast.LENGTH_SHORT).show();
-//            }
-//        });
+
     }
 
     private void initRecyclerArtikel () {
@@ -66,23 +61,6 @@ public class MainActivity extends AppCompatActivity {
                     final List<ModelArtikel> mHome = response.body().getResult();
                     mAdapter = new AdapterArtikel(mHome,mContext);
                     mArtikelview.setAdapter(mAdapter);
-                    mArtikelview.addOnItemTouchListener(new RecyclerTouchListener(mContext, mArtikelview, new ClickListener() {
-                        @Override
-                        public void onClick(View view, int position) {
-                            ModelArtikel modelArtikel = mHome.get(position);
-                            Intent i = new Intent(mContext, Detail.class);
-                            i.putExtra("judul",modelArtikel.getJudul());
-                            i.putExtra("tanggal",modelArtikel.getTanggal());
-                            i.putExtra("text",modelArtikel.getText());
-                            i.putExtra("foto",modelArtikel.getFoto());
-                            i.putExtra("like",modelArtikel.getLike());
-                            startActivity(i);
-                        }
-                        @Override
-                        public void onLongClick(View view, int posi) {
-
-                        }
-                    }));
                 }
 
                 @Override

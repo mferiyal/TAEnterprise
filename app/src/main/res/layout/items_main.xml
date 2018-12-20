@@ -1,119 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#FFF"
-    android:layout_marginBottom="2px">
-
+    android:gravity="center_vertical"
+    android:minHeight="72dp"
+    android:orientation="horizontal"
+    android:padding="16dp">
 
     <LinearLayout
-        android:id="@+id/post_main_lay"
-        android:layout_marginTop="3dp"
-        android:layout_marginBottom="3dp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        >
-
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/images_profil"
-            android:layout_marginTop="5dp"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:scaleType="centerCrop"
-            android:layout_centerHorizontal="true"
-            android:src="@drawable/ic_launcher_background"/>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:layout_marginLeft="8dp"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                    <TextView
-                        android:id="@+id/txtJudul"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="4dp"
-                        android:text="Cara memadamkan api"
-                        android:textSize="14sp"
-                        android:textStyle="bold"
-                        android:textColor="#000"/>
-
-
-                    <TextView
-                        android:id="@+id/tanggalpost"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="12sp"
-                        android:text="` 07 September 18" />
-                </LinearLayout>
-
-
-
-            </RelativeLayout>
-
-            <TextView
-                android:id="@+id/teks"
-                android:layout_margin="8dp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Larutkan 1/2 kg garam dan 250 gram amonium klorida dalam dua liter air. Tempatkan larutan tersebut pada botol kaca. Jika terjadi kebakaran, lemparkan botol tersebut pada kobaran api.
-"
-                />
-
-        </LinearLayout>
-
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/txtJudul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:paddingRight="16dp"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/tanggalpost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="16dp"
+            android:textColor="#000" />
+        <TextView
+            android:id="@+id/teks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="3"
+            android:paddingRight="16dp"
+            android:textColor="#000" />
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/button"
-        android:layout_width="41dp"
-        android:layout_height="33dp"
-        android:layout_below="@+id/post_main_lay"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="329dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/like"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_above="@+id/button"
-            android:layout_alignEnd="@+id/button"
-            android:layout_marginStart="10dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:background="@drawable/dislike" />
 
-
     </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_below="@+id/button"
-        android:orientation="horizontal"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-    </LinearLayout>
-
-
-</RelativeLayout>
+</LinearLayout>

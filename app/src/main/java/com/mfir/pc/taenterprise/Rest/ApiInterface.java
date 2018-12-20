@@ -35,10 +35,10 @@ public interface ApiInterface {
     Call<ResultArtikel> artikel (@Field("judul") String judul,
                                      @Field("tanggal") String tanggal,
                                      @Field("text") String text,
-                                     @Field("foto") String foto,
-                                     @Field("like") Integer like);
+                                     @Field("foto") String foto);
+//                                     @Field("like") Integer like);
 
 
-    Call<ResultArtikel> suka(Button like);
+//    Call<ResultArtikel> suka(Button like);
 
 }

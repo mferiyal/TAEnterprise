@@ -4,8 +4,8 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ApiClient {
 
 
-    public static final String BASE_URL = "http://192.168.1.35/artikel/index.php/";
-    public static final String Base_Upload = "http://192.168.1.35/artikel/upload/";
+    public static final String BASE_URL = "http://192.168.1.16/artikel/index.php/";
+    public static final String Base_Upload = "http://192.168.1.16/artikel/upload/";
 
 
     private static Retrofit retrofit = null;
